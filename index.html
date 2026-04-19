@@ -1,86 +1,54 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TertiairePulse | Indicateurs du Marché Immobilier d'Entreprise</title>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MetaPulse | Ton Portail vers le Métavers</title>
+    <meta name="description" content="Bienvenue dans le futur de l'interaction">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Roboto', sans-serif; background-color: #f0f2f5; }
-        .sidebar-link { transition: all 0.2s; border-left: 3px solid transparent; }
-        .sidebar-link:hover, .sidebar-link.active { background: #e2e8f0; border-left-color: #1e40af; color: #1e40af; }
-        .page { display: none; }
-        .page.active { display: block; }
-        .table-row:hover { background-color: #f8fafc; }
-    </style>
-</head>
-<body class="flex flex-col h-screen">
+  </head>
+  <body>
 
-    <header class="bg-[#1e40af] text-white py-3 px-6 flex justify-between items-center shadow-md">
-        <div class="flex items-center gap-4">
-            <span class="text-xl font-bold tracking-tight">TERTIAIRE<span class="opacity-70">PULSE</span></span>
-            <span class="text-[10px] bg-white/20 px-2 py-0.5 rounded uppercase">Data Service</span>
-        </div>
-        <div class="text-sm font-light">Partenaire d'analyse immobilière B2B</div>
-    </header>
+    <div style="position: absolute; top: 20px; left: 20px; z-index: 1000; pointer-events: none;">
+        <h1 class="text-white text-4xl font-black italic tracking-tighter bg-black/50 p-4 inline-block">METAPULSE <span class="text-cyan-400">0.1</span></h1>
+        <p class="text-cyan-300 text-sm mt-2 font-mono bg-black/30 p-2">Utilisez Z,Q,S,D pour marcher | Souris pour regarder</p>
+    </div>
 
-    <div class="flex flex-1 overflow-hidden">
-        <aside class="w-64 bg-white border-r border-gray-300 flex flex-col">
-            <div class="p-4 text-xs font-bold text-gray-400 uppercase tracking-widest border-b">Indicateurs</div>
-            <nav class="flex-1">
-                <button onclick="showPage('dashboard')" class="sidebar-link active w-full text-left p-4 text-sm font-medium">Tableau de Bord</button>
-                <button onclick="showPage('marche')" class="sidebar-link w-full text-left p-4 text-sm font-medium">Marché Bureaux</button>
-                <button onclick="showPage('logistique')" class="sidebar-link w-full text-left p-4 text-sm font-medium">Logistique & Entrepôts</button>
-                <button onclick="showPage('premium')" class="sidebar-link w-full text-left p-4 text-sm font-medium text-blue-600 font-bold">Rapports PDF Expert</button>
-            </nav>
-            <div class="p-4 border-t text-[10px] text-gray-400">
-                Source : INSEE / SIRENE / DATA.GOUV<br>Dernier flux : Avr. 2026
-            </div>
-        </aside>
+    <div style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 1000;">
+        <button onclick="window.location.href='TON_LIEN_PAYPAL_ICI'" class="bg-cyan-500 hover:bg-white hover:text-cyan-600 text-white font-bold py-4 px-10 rounded-full shadow-[0_0_20px_rgba(6,182,212,0.5)] transition duration-500 uppercase tracking-widest text-sm">
+            Acheter un terrain virtuel (19€)
+        </button>
+    </div>
 
-        <main class="flex-1 overflow-y-auto p-8">
-            
-            <div id="dashboard" class="page active">
-                <div class="flex justify-between items-end mb-8">
-                    <h2 class="text-2xl font-bold text-gray-800">Vue d'ensemble France</h2>
-                    <span class="text-sm text-gray-500">Données agrégées au 19/04/2026</span>
-                </div>
+    <a-scene fog="type: exponential; color: #020617; density: 0.02">
+      
+      <a-sky color="#020617"></a-sky>
 
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-                    <div class="bg-white p-5 border border-gray-200 shadow-sm">
-                        <p class="text-xs text-gray-500 uppercase font-bold">Investissement global</p>
-                        <p class="text-2xl font-bold text-blue-900">12.4 Md€</p>
-                        <p class="text-[10px] text-green-600 font-bold mt-1">▲ +1.2% (an)</p>
-                    </div>
-                    <div class="bg-white p-5 border border-gray-200 shadow-sm">
-                        <p class="text-xs text-gray-500 uppercase font-bold">Loyer Moyen (Bureaux)</p>
-                        <p class="text-2xl font-bold text-blue-900">425€ <span class="text-sm font-normal text-gray-400">/m²</span></p>
-                        <p class="text-[10px] text-gray-400 font-bold mt-1">Stable (IDF)</p>
-                    </div>
-                    <div class="bg-white p-5 border border-gray-200 shadow-sm">
-                        <p class="text-xs text-gray-500 uppercase font-bold">Taux de Vacance</p>
-                        <p class="text-2xl font-bold text-blue-900">7.8%</p>
-                        <p class="text-[10px] text-red-600 font-bold mt-1">▼ -0.4% (trim)</p>
-                    </div>
-                    <div class="bg-white p-5 border border-gray-200 shadow-sm">
-                        <p class="text-xs text-gray-500 uppercase font-bold">Immatriculations B2B</p>
-                        <p class="text-2xl font-bold text-blue-900">4 820</p>
-                        <p class="text-[10px] text-blue-600 font-bold mt-1">Secteur Tertiaire</p>
-                    </div>
-                </div>
+      <a-grid position="0 0 0" rotation="-90 0 0" width="100" height="100" src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></a-grid>
+      <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" color="#0F172A"></a-plane>
 
-                <div class="bg-white p-6 border border-gray-200 shadow-sm">
-                    <h3 class="font-bold text-gray-700 mb-6 border-b pb-2">Evolution des volumes de transaction (Moyenne 12 mois)</h3>
-                    <canvas id="immoChart" height="80"></canvas>
-                </div>
-            </div>
+      <a-box position="-5 2 -10" width="2" height="4" depth="2" color="#06B2D2" material="opacity: 0.6; transparent: true">
+          <a-box position="0 0 0" width="2.1" height="4.1" depth="2.1" wireframe="true" color="#fff"></a-box>
+      </a-box>
 
-            <div id="marche" class="page">
-                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-blue-800">Indicateurs de Marché par Métropole</h2>
-                <div class="bg-white border border-gray-200 shadow-sm overflow-hidden">
-                    <table class="w-full text-left">
-                        <thead class="bg-gray-50 text-xs uppercase font-bold text-gray-500 border-b">
-                            <tr>
-                                <th class="p-4">March
+      <a-box position="5 4 -15" width="3" height="8" depth="3" color="#A855F7" material="opacity: 0.5; transparent: true">
+          <a-box position="0 0 0" width="3.1" height="8.1" depth="3.1" wireframe="true" color="#fff"></a-box>
+      </a-box>
+
+      <a-box position="0 1 -5" width="1" height="2" depth="1" color="#F43F5E" material="opacity: 0.7; transparent: true">
+          <a-text value="BOUTIQUE" position="-0.5 1.5 0.5" color="white" width="4"></a-text>
+      </a-box>
+
+      <a-sphere position="0 10 -20" radius="5" color="#fff" material="shader: flat" animation="property: position; dir: alternate; dur: 5000; easing: easeInOutSine; loop: true; to: 0 12 -20"></a-sphere>
+
+      <a-entity light="type: ambient; color: #444"></a-entity>
+      <a-entity light="type: point; intensity: 1.5; distance: 50; decay: 2" position="0 5 -10"></a-entity>
+
+      <a-entity id="rig" position="0 1.6 0">
+        <a-camera look-controls wasd-controls></a-camera>
+      </a-entity>
+
+    </a-scene>
+
+  </body>
+</html>
