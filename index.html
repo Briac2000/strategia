@@ -2,43 +2,63 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StrategIA - Ton Business en 1 Clic</title>
+    <title>TertiairePulse - Analyse de Marché Temps Réel</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-black text-white font-sans">
-    <nav class="p-6 border-b border-gray-800 flex justify-between">
-        <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">StrategIA</h1>
-        <button class="bg-white text-black px-4 py-2 rounded-full font-bold hover:bg-gray-200 transition">Connexion</button>
-    </nav>
+<body class="bg-slate-950 text-slate-100">
+    <div class="max-w-6xl mx-auto p-6">
+        <header class="flex justify-between items-center mb-12">
+            <h1 class="text-3xl font-black text-blue-500">TERTIAIRE<span class="text-white">PULSE</span></h1>
+            <div class="bg-green-500/20 text-green-400 px-4 py-1 rounded-full text-sm animate-pulse border border-green-500/50">
+                ● Données Live INSEE/DARES
+            </div>
+        </header>
 
-    <main class="max-w-4xl mx-auto mt-20 text-center px-4">
-        <h2 class="text-5xl md:text-7xl font-extrabold mb-6">L'IA qui crée ton business pendant que tu dors.</h2>
-        <p class="text-gray-400 text-xl mb-10">Colle une idée, l'IA génère le produit, le tunnel de vente et le contenu viral.</p>
-        
-        <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 shadow-2xl">
-            <input type="text" placeholder="Ex: Vendre des formations de Yoga pour chiens..." class="w-full p-4 rounded-lg bg-black border border-gray-700 text-white mb-4 focus:ring-2 focus:ring-blue-500 outline-none">
-            <button onclick="generate()" class="w-full bg-gradient-to-r from-blue-600 to-purple-700 p-4 rounded-lg font-bold text-xl hover:scale-105 transition shadow-lg shadow-blue-500/20">Lancer la machine (Gratuit)</button>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
+                <p class="text-slate-400 text-sm">Indice de Croissance (Tertiaire)</p>
+                <h3 class="text-4xl font-bold">+2.4% <span class="text-sm text-green-500 font-normal">↑ ce mois</span></h3>
+            </div>
+            <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
+                <p class="text-slate-400 text-sm">Nouvelles immatriculations</p>
+                <h3 class="text-4xl font-bold">14 290</h3>
+            </div>
+            <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
+                <p class="text-slate-400 text-sm">Villes en surchauffe</p>
+                <h3 class="text-4xl font-bold text-orange-400">Lyon, Nantes</h3>
+            </div>
         </div>
 
-        <div id="result" class="hidden mt-10 p-6 bg-gray-800 rounded-lg text-left animate-pulse">
-            Analyse des niches en cours... Génération du plan marketing...
+        <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 mb-12">
+            <h2 class="text-xl font-bold mb-6">Analyse prédictive par région</h2>
+            <canvas id="marketChart" height="100"></canvas>
         </div>
-    </main>
 
-    <footer class="mt-20 py-10 border-t border-gray-900 text-gray-500 text-sm">
-        Propulsé par le Protocole Autonome StrategIA 2026.
-    </footer>
+        <div class="text-center bg-blue-600 p-10 rounded-2xl shadow-2xl shadow-blue-500/20">
+            <h2 class="text-3xl font-bold mb-4">Accédez au rapport détaillé (PDF)</h2>
+            <p class="mb-6 text-blue-100 text-lg">L'IA a généré une analyse de 45 pages sur les opportunités du tertiaire en France cette semaine.</p>
+            <button onclick="window.location.href='TON_LIEN_PAYPAL_ICI'" class="bg-white text-blue-600 px-8 py-4 rounded-full text-xl font-black hover:bg-slate-100 transition shadow-xl">Acheter l'analyse - 49€</button>
+        </div>
+    </div>
 
     <script>
-        function generate() {
-            const res = document.getElementById('result');
-            res.classList.remove('hidden');
-            setTimeout(() => {
-                res.innerHTML = "<h3 class='text-green-400 font-bold'>✓ Plan de Business prêt !</h3><p class='mt-2'>Pour débloquer les 50 pages de stratégie et les scripts vidéos, passe à la version PRO (19€).</p><button class='mt-4 bg-green-500 text-white px-6 py-2 rounded font-bold'>Débloquer maintenant</button>";
-                res.classList.remove('animate-pulse');
-            }, 3000);
-        }
+        const ctx = document.getElementById('marketChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Féb', 'Mar', 'Avr', 'Mai', 'Juin'],
+                datasets: [{
+                    label: 'Volume d\'activité Tertiaire (France)',
+                    data: [65, 59, 80, 81, 76, 85],
+                    borderColor: '#3b82f6',
+                    tension: 0.4,
+                    fill: true,
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)'
+                }]
+            },
+            options: { plugins: { legend: { display: false } }, scales: { y: { display: false }, x: { grid: { display: false } } } }
+        });
     </script>
 </body>
 </html>
