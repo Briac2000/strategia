@@ -2,79 +2,79 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>DataVerse France | Le Métavers Économique</title>
+    <title>Briac Truchon-Bartès | Atrium Numérique</title>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Space Grotesk', sans-serif; }
-        .ui-panel { position: absolute; z-index: 100; pointer-events: none; width: 100%; height: 100%; }
-        .interactive { pointer-events: auto; }
+        body { font-family: 'Montserrat', sans-serif; }
     </style>
   </head>
   <body>
 
-    <div class="ui-panel p-8 flex flex-col justify-between">
+    <div style="position: absolute; top: 20px; left: 20px; z-index: 1000; pointer-events: none; width: 100%; height: 100%;" class="p-10 flex flex-col justify-between">
         <div class="flex justify-between items-start">
-            <div class="bg-black/80 border-l-4 border-cyan-500 p-6 text-white backdrop-blur-md">
-                <h1 class="text-2xl font-bold tracking-widest">DATAVERSE <span class="text-cyan-400 font-light">FRANCE</span></h1>
-                <p class="text-[10px] text-gray-400 uppercase tracking-[0.3em]">Visualisation Immobilière Immersive</p>
-                <div class="mt-4 flex gap-4">
-                    <div class="text-center"><p class="text-xs text-gray-500">INDICE TERTIAIRE</p><p class="text-xl font-bold text-green-400">104.2</p></div>
-                    <div class="text-center border-l border-white/10 pl-4"><p class="text-xs text-gray-500">FLUX SIRENE</p><p class="text-xl font-bold text-cyan-400">LIVE</p></div>
+            <div class="bg-black/90 p-8 text-white border-l-4 border-blue-600 backdrop-blur-md">
+                <h1 class="text-3xl font-bold tracking-tighter">BRIAC TRUCHON-BARTÈS</h1>
+                <p class="text-[10px] text-gray-400 uppercase tracking-[0.4em] mt-1">Stratège en Transformation Digitale & IA</p>
+                <div class="mt-4 flex gap-6 text-[9px] uppercase tracking-widest text-gray-400">
+                    <span>● CEO @ StrategIA</span>
+                    <span>● Expert OpenData</span>
                 </div>
             </div>
-            <div class="interactive bg-white px-6 py-3 rounded-full shadow-2xl">
-                <span class="text-xs font-bold text-black italic">Session Investisseur : <span class="text-blue-600">Active</span></span>
-            </div>
+            <div class="p-2 border border-white/10 bg-black/50 text-white rounded-full text-xs">Session Pro</div>
         </div>
 
-        <div class="flex justify-center pb-12">
-            <div class="interactive bg-black/90 p-1 rounded-xl flex gap-2 border border-white/20">
-                <button onclick="window.location.href='TON_LIEN_PAYPAL_ICI'" class="bg-cyan-600 hover:bg-cyan-400 text-white px-8 py-4 rounded-lg font-bold text-sm transition-all duration-300 uppercase tracking-widest">
-                    Acheter l'Analyse 3D (49€)
-                </button>
-            </div>
+        <div class="flex justify-center pb-20 pointer-events-auto">
+            <button onclick="window.location.href='https://calendly.com/briac-truchon-bartes/consultation'" class="bg-blue-600 hover:bg-white hover:text-blue-700 text-white px-10 py-5 rounded font-bold text-sm transition-all duration-300 uppercase tracking-widest shadow-[0_0_30px_rgba(37,99,235,0.4)]">
+                Planifier une consultation stratégique
+            </button>
         </div>
     </div>
 
-    <a-scene fog="type: linear; color: #000814; far: 40; near: 0">
+    <a-scene fog="type: exponential; color: #f8fafc; density: 0.01">
       
-      <a-sky color="#000814"></a-sky>
+      <a-sky color="#f8fafc"></a-sky>
       
-      <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" color="#020617"></a-plane>
-      <a-grid position="0 0.01 0" rotation="-90 0 0" width="100" height="100" src="https://raw.githubusercontent.com/donmccurdy/aframe-extras/master/assets/grid.png" material="opacity: 0.2; transparent: true"></a-grid>
+      <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" color="#e2e8f0"></a-plane>
+      <a-grid position="0 0.01 0" rotation="-90 0 0" width="100" height="100" src="https://raw.githubusercontent.com/donmccurdy/aframe-extras/master/assets/grid.png" material="opacity: 0.05; transparent: true"></a-grid>
 
-      <a-entity position="-5 0 -10">
-          <a-box width="2" depth="2" height="12" color="#1e40af" material="opacity: 0.8; transparent: true">
-              <a-box width="2.1" depth="2.1" height="12.1" wireframe="true" color="#fff"></a-box>
-          </a-box>
-          <a-text value="PARIS QCA\nLoyer: 980e" position="0 7 1.2" align="center" width="6" font="exo2bold"></a-text>
+      <a-cylinder position="0 5 -10" radius="15" height="10" material="opacity: 0.05; transparent: true; wireframe: true" color="#64748b"></a-cylinder>
+      <a-ring position="0 0.05 -10" rotation="-90 0 0" radius-inner="14.8" radius-outer="15" color="#94a3b8"></a-ring>
+
+      <a-entity position="-6 3 -12" rotation="0 20 0">
+          <a-plane width="4" height="6" color="#0F172A" material="opacity: 0.95; transparent: true"></a-plane>
+          <a-text value="PROFIL\nSTRATÉGIQUE" position="-1.5 2.5 0.1" align="left" width="5" font="exo2bold" color="#fff"></a-text>
+          <a-text value="Expert en fusionnant la data et l'IA pour créer des business modèles disruptifs.\n\nVisionnaire dans le domaine de l'OpenData et de l'automatisation.\n\nCofondateur de StrategIA, le protocole d'entrepreneuriat autonome." position="-1.8 1 0.1" align="left" width="3.5" color="#cbd5e1" wrap-count="30"></a-text>
+          <a-box width="4.1" height="6.1" depth="0.01" wireframe="true" color="#fff"></a-box>
       </a-entity>
 
-      <a-entity position="0 0 -15">
-          <a-box width="2" depth="2" height="7" color="#0891b2" material="opacity: 0.8; transparent: true">
-              <a-box width="2.1" depth="2.1" height="7.1" wireframe="true" color="#fff"></a-box>
-          </a-box>
-          <a-text value="LYON\nCroissance: +4.2%" position="0 4.5 1.2" align="center" width="6"></a-text>
+      <a-entity position="0 4 -15">
+          <a-plane width="7" height="4" color="#fff" material="opacity: 0.95; transparent: true"></a-plane>
+          <a-text value="EXPÉRIENCE CLÉ" position="-3.2 1.5 0.1" align="left" width="8" font="exo2bold" color="#0F172A"></a-text>
+          
+          <a-text value="Cofondateur @ StrategIA (2025 - Présent)" position="-3.2 0.8 0.1" align="left" width="4.5" color="#334155" font="exo2bold"></a-text>
+          <a-text value="Développement du protocole de création d'entreprise autonome par IA." position="-3.2 0.4 0.1" align="left" width="4.5" color="#64748b"></a-text>
+          
+          <a-text value="Analyse Data-Métavers (2024)" position="-3.2 -0.2 0.1" align="left" width="4.5" color="#334155" font="exo2bold"></a-text>
+          <a-text value="Pionnier dans la visualisation immersive de données économiques." position="-3.2 -0.6 0.1" align="left" width="4.5" color="#64748b"></a-text>
+          
+          <a-box width="7.1" height="4.1" depth="0.01" wireframe="true" color="#0F172A"></a-box>
       </a-entity>
 
-      <a-entity position="6 0 -8">
-          <a-box width="4" depth="4" height="3" color="#7e22ce" material="opacity: 0.8; transparent: true">
-              <a-box width="4.1" depth="4.1" height="3.1" wireframe="true" color="#fff"></a-box>
-          </a-box>
-          <a-text value="LOGISTIQUE\nDemande Placed: +12%" position="0 2.5 2.2" align="center" width="6"></a-text>
+      <a-entity position="6 3 -12" rotation="0 -20 0">
+          <a-plane width="4" height="6" color="#0F172A" material="opacity: 0.95; transparent: true"></a-plane>
+          <a-text value="FORMATION\n& SKILLS" position="-1.5 2.5 0.1" align="left" width="5" font="exo2bold" color="#fff"></a-text>
+          <a-text value="Métavers Architecture\nData Visualization\nAI Model Deployment\nBusiness Strategy 3.0" position="-1.8 0.5 0.1" align="left" width="3.5" color="#cbd5e1" wrap-count="25"></a-text>
+          <a-box width="4.1" height="6.1" depth="0.01" wireframe="true" color="#fff"></a-box>
       </a-entity>
 
-      <a-sphere position="0 15 -25" radius="8" color="#fff" material="opacity: 0.05; transparent: true; wireframe: true" 
-                animation="property: rotation; to: 0 360 0; loop: true; dur: 20000; easing: linear"></a-sphere>
-
-      <a-light type="ambient" intensity="0.5" color="#fff"></a-light>
-      <a-light type="point" intensity="2" position="2 10 -5" color="#06b2d2"></a-light>
+      <a-light type="ambient" intensity="0.6" color="#fff"></a-light>
+      <a-light type="point" intensity="1.5" position="0 8 -5" color="#fff"></a-light>
 
       <a-entity id="rig" position="0 1.6 5">
         <a-camera look-controls wasd-controls></a-camera>
-        <a-cursor color="#06b2d2"></a-cursor>
+        <a-cursor color="#2563eb" radius-inner="0.01" radius-outer="0.02"></a-cursor>
       </a-entity>
 
     </a-scene>
